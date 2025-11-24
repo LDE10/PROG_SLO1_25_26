@@ -1,0 +1,29 @@
+﻿  Conversion.c
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\Conversion.c(28,1): warning C4305: 'initialisation' : troncation de 'double' à 'const float'
+  demo_main.c
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(78,9): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'size_t'
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(78,9): message : utilisez '%zd' dans la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(86,9): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'size_t'
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(86,9): message : utilisez '%zd' dans la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(92,9): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'size_t'
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(92,9): message : utilisez '%zd' dans la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(59,16): warning C4101: 'varint2' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(70,11): warning C4101: 'varchar4' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(51,8): warning C4101: 'varchar1' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(66,11): warning C4101: 'varint3' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(57,17): warning C4101: 'varchar2' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(53,8): warning C4101: 'varint1' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(58,18): warning C4101: 'varshort2' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(54,12): warning C4101: 'varlong1' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(60,21): warning C4101: 'varlong2' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(52,9): warning C4101: 'varshort1' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(71,12): warning C4101: 'varshort4' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(67,12): warning C4101: 'varlong3' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(97,10): warning C4101: 'vardouble' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(73,13): warning C4101: 'varlong4' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(72,12): warning C4101: 'varint4' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(64,10): warning C4101: 'varchar3' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(96,9): warning C4101: 'varfloat' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\Démo\demo_main.c(65,11): warning C4101: 'varshort3' : variable locale non référencée
+  Génération de code en cours...
+  Démo.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\CodeDemo\Test-25_26\Démo_25_26\x64\Debug\Démo.exe
