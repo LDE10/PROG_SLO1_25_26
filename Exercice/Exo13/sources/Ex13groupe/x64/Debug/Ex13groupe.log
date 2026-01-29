@@ -1,5 +1,19 @@
 ﻿  Ex13StrcutureGroupe.c
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(123,27): warning C4013: 'pow' non défini(e) ; extern retournant int pris par défaut
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(123,25): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(133,23): warning C4305: '=' : troncation de 'double' à 'float'
-  Ex13groupe.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\x64\Debug\Ex13groupe.exe
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(79,26): error C2143: erreur de syntaxe : absence de ')' avant 'type'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(79,2): error C2198: 'codage' : pas assez d'arguments pour un appel
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(79,33): error C2059: erreur de syntaxe : ')'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(99,27): error C2065: 'st_tbCode' : identificateur non déclaré
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(99,28): error C2224: la partie gauche de '.tbNRZ' doit avoir un type struct/union
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(99,12): warning C4473: 'printf' : nombre insuffisant d'arguments passés pour la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(99,12): message : les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 0 ont été fournis
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(99,12): message : l'argument variadique manquant 1 est demandé par la chaîne de format '%d'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(104,27): error C2065: 'st_tbCode' : identificateur non déclaré
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(104,28): error C2224: la partie gauche de '.tnNRZi' doit avoir un type struct/union
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(104,12): warning C4473: 'printf' : nombre insuffisant d'arguments passés pour la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(104,12): message : les espaces réservés et leurs paramètres attendent des arguments 1 variadiques, mais des arguments 0 ont été fournis
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(104,12): message : l'argument variadique manquant 1 est demandé par la chaîne de format '%d'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(130,27): warning C4013: 'pow' non défini(e) ; extern retournant int pris par défaut
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(130,25): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(140,23): warning C4305: '=' : troncation de 'double' à 'float'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(165,1): error C2449: trouvé '{' au niveau de la portée du fichier (en-tête de fonction manquant ?)
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(167,1): error C2059: erreur de syntaxe : '}'

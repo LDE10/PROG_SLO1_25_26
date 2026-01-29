@@ -73,8 +73,9 @@ void main()
 	printf("%s %1.1f \n", MSG_BIENVENU, VERSION_CODE); 
 
 	//-- PARTIE A - GROUPE 1 --// 
-
+	
 	//-- appel de la fonction codage --//
+	struct st_tbCode codage(const char tab[], int taille);
 
 	//-- affichage des tableaux non codé et codé --// 
 	for(int nbTb = 0 ; nbTb < NB_TB_AFFICHER ; nbTb++)
@@ -93,9 +94,15 @@ void main()
 				printf("%d", tbBinaire[i]); 
 
 			//-- affichage tb code NRZ -- 
-
+			else if (nbTb == 1)
+			{
+				printf("%d", );
+			}
 			//-- affichage tb code NRZi
-
+			else
+			{
+				printf("%d", );
+			}
 		}
 		//-- retour à la ligne --// 
 		printf("\n\n");
@@ -152,4 +159,34 @@ void main()
 	printf("angle alpha degre : ");
 
 	system("pause");	// -> environnement windows 
+}
+
+codage(const char tab[], int taille)
+{
+	struct st_tbCode result;
+
+	for (int i = 0; i < taille; i++)
+	{
+		if (tab[i] == 1)
+		{
+			result.tbNRZ[i] = -5;
+		}
+		else
+		{
+			result.tbNRZ[i] = 5;
+		}
+	}
+
+	for (int i = 0; i < taille; i++) {
+
+		if (tab[i] == '1') 
+		{
+			niveau = -niveau;   // inversion si 1
+		}
+		// sinon on garde le même niveau
+
+		result.tbNRZi[i + 1] = niveau;
+	}
+
+	return(result);
 }
