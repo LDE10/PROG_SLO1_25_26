@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "Test.h"
 
 //-- librairie perso --//
 //#include ""					"" -> pour chercher une librairie dans son dossier
@@ -35,24 +36,41 @@
 //-- paramètre IN-OUT : -
 //-- description	  : programme principal =>
 //--------------------------------------------------------------------------//
+
+
+
 void main()
 {
 	//-- variable--//
-	char Test;
-	int ValA;
+	//char Test;
+	//int ValA;
 
-	int ValB;
-	short ValB1 = 0;
-	double ValB2 = 0;
+	//int ValB;
+	//short ValB1 = 0;
+	//double ValB2 = 0;
+	char v = 0;
+	char o = 5;
+	v = o-1;
+	printf("%d\n", v);
 
-	do
+
+	char nbr = 0;
+	char etoile_tot = 0;
+
+	scanf_s("%hhd", &nbr);
+
+	etoile_tot = AffTriangleAngleDH(nbr);
+
+	printf("%d\n", etoile_tot);
+
+	/*do
 	{
 		printf("Test A ou B, Q pour Quitter\n");
-		scanf_s(" %c", &Test, 1);
+		
 
 		if (Test == 'A')
 		{
-			printf("Test A : entrez un nombre entre 1 a 9\n");
+			printf("Test A : entrez un nombre entre 1 et 9\n");
 			scanf_s("%d", &ValA);
 
 			if (ValA > 9)
@@ -103,5 +121,33 @@ void main()
 				}
 			}
 		}
-	} while (Test != 'Q');
+	} while (Test != 'Q');*/
 }
+
+//char AffTriangleAngleDH(char nbr)
+//{
+//	char Nbr_tour_etoile = nbr;
+//	char Nbr_espace = nbr;
+//	char Nbr_etoile_tot = 0;
+//
+//	for (int Nbr_tour = 0; Nbr_tour < Nbr_espace; Nbr_tour++)
+//	{
+//		for (int espace = 0; espace < Nbr_tour; espace++)
+//		{
+//			printf(" ");
+//		}
+//
+//		for (int Nbr_etoile = 0; Nbr_etoile < Nbr_tour_etoile; Nbr_etoile++)
+//		{
+//			printf("*");
+//			Nbr_etoile_tot++;
+//		}
+//		printf("\n");
+//
+//		if (Nbr_tour_etoile > 0)
+//		{
+//			Nbr_tour_etoile--;
+//		}
+//	}
+//	return(Nbr_etoile_tot);
+//}

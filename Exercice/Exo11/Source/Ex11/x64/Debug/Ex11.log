@@ -1,0 +1,5 @@
+﻿  Ex11.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo11\Source\Ex11\Ex11.c(82,13): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo11\Source\Ex11\Ex11.c(84): warning C4716: 'fDivInt' : doit retourner une valeur
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo11\Source\Ex11\Ex11.c(97): warning C4716: 'Extract' : doit retourner une valeur
+  Ex11.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo11\Source\Ex11\x64\Debug\Ex11.exe

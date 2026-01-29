@@ -1,0 +1,7 @@
+﻿  Ex10.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\Ex10.c(85,12): warning C4244: '=' : conversion de 'const unsigned long' en 'unsigned short', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\Ex10.c(86,9): warning C4244: '=' : conversion de 'unsigned short' en 'char', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\Ex10.c(90,12): warning C4244: '=' : conversion de 'unsigned short' en 'char', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\Ex10.c(93): warning C4716: 'Extract' : doit retourner une valeur
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\Ex10.c(73): warning C4716: 'FtestA' : doit retourner une valeur
+  Ex10.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo10\source\Ex10\x64\Debug\Ex10.exe

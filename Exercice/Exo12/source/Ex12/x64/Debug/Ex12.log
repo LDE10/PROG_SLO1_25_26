@@ -1,0 +1,7 @@
+﻿  Ex12.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\Ex12.c(39,29): warning C4047: 'fonction' : les niveaux d'indirection de 'double *' et de 'double **' sont différents
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\Ex12.c(39,26): warning C4024: 'ShowItems' : types différents pour le paramètre formel et réel 2
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\Ex12.c(40,13): warning C4477: 'printf' : la chaîne de format '%x' nécessite un argument de type 'unsigned int', mais l'argument variadique 2 est de type 'double *'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\Ex12.c(40,13): warning C4313: 'printf' : '%x' dans la chaîne de format est en conflit avec l'argument 2 de type 'double *'.
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\Ex12.c(69): warning C4716: 'ShowItems' : doit retourner une valeur
+  Ex12.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo12\source\Ex12\x64\Debug\Ex12.exe
