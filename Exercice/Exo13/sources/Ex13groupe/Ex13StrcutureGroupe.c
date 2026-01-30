@@ -37,8 +37,19 @@
 struct st_tbCode
 {
 	int8_t tbNRZ[10];
-	int8_t tnNRZi[10];
+	int8_t tnNRZi[11];
 };
+
+struct st_temps
+{
+	int annees;
+	int semaines;
+	int jours;
+	int heurs;
+	int minutes;
+	int secondes;
+};
+
 
 struct str_tbInfoRIUP
 {
@@ -55,6 +66,10 @@ struct str_trioTR
 	int16_t aplha_degre; 
 };
 
+struct st_tbCode codage(const int8_t tab[], int taille);
+
+struct st_temps ConvSJHMs1(int Time1);
+struct st_temps ConvSJHMs2(int Time2);
 
 //-- programme principale --//
 void main()
@@ -62,8 +77,8 @@ void main()
 	//-- déclaration de variables --// 
 	int8_t tbBinaire[TAILLE_TB_BINAIRE] = { 0,1,0,1,0,1,1,0,0,0};
 
-		// Time1 -> 654852	[s]
-		// Time2 -> 1225453 [s]
+	int Time1 = 654852;	// [s]
+	int Time2 = 1225453; // [s]
 	 
 	struct str_tbInfoRIUP infosRIUP; 
 
@@ -73,9 +88,8 @@ void main()
 	printf("%s %1.1f \n", MSG_BIENVENU, VERSION_CODE); 
 
 	//-- PARTIE A - GROUPE 1 --// 
-	
 	//-- appel de la fonction codage --//
-	struct st_tbCode codage(const char tab[], int taille);
+	struct st_tbCode code = codage(tbBinaire, TAILLE_TB_BINAIRE);
 
 	//-- affichage des tableaux non codé et codé --// 
 	for(int nbTb = 0 ; nbTb < NB_TB_AFFICHER ; nbTb++)
@@ -96,12 +110,12 @@ void main()
 			//-- affichage tb code NRZ -- 
 			else if (nbTb == 1)
 			{
-				printf("%d", );
+				printf("%d ", code.tbNRZ[i]);
 			}
 			//-- affichage tb code NRZi
 			else
 			{
-				printf("%d", );
+				printf("%d ", code.tnNRZi[i]);
 			}
 		}
 		//-- retour à la ligne --// 
@@ -112,12 +126,15 @@ void main()
 	//-- Partie B - Groupe 2 --// 
 
 	//-- appel de la fonction de conversio --// 
+	struct st_temps Temps1 = ConvSJHMs1(Time1);
+	struct st_temps Temps2 = ConvSJHMs2(Time2);
 
 	//-- affichage MSG user --// 
-	printf("Premier Test : temps 1 : %%d [s] vaut "); 
-	printf("%%d Semaine : %%d Jour : %%d Heures : %%d Minutes : %%d Secondes \n"); 
-	printf("Premier Test : temps 2 : %%d [s] vaut ");
-	printf("%%d Semaine : %%d Jour : %%d Heures : %%d Minutes : %%d Secondes \n");
+	printf("Premier Test : temps 1 : %d [s] vaut ", Time1);
+	printf("Annee :%d Semaine : %d Jour : %d Heures : %d Minutes : %d Secondes \n", Temps1.annees, Temps1.semaines, Temps1.jours, Temps1.heurs, Temps1.minutes, Temps1.secondes);
+
+	printf("Premier Test : temps 2 : %d [s] vaut ", Time2);
+	printf("Annee : %d Semaine : %d Jour : %d Heures : %d Minutes : %d Secondes \n", Temps2.annees, Temps2.semaines, Temps2.jours, Temps2.heurs, Temps2.minutes, Temps2.secondes);
 
 	//-- retour à la ligne --// 
 	printf("\n\n");
@@ -161,10 +178,13 @@ void main()
 	system("pause");	// -> environnement windows 
 }
 
-codage(const char tab[], int taille)
+struct st_tbCode codage(const int8_t tab[], int taille)
 {
 	struct st_tbCode result;
 
+	int niveau = 5;
+
+	// NRZ
 	for (int i = 0; i < taille; i++)
 	{
 		if (tab[i] == 1)
@@ -177,16 +197,93 @@ codage(const char tab[], int taille)
 		}
 	}
 
-	for (int i = 0; i < taille; i++) {
+	// NRZi
+	result.tnNRZi[0] = 5;   // valeur de départ
 
-		if (tab[i] == '1') 
+	for (int i = 0; i < taille; i++)
+	{
+		if (tab[i] == 1)
 		{
-			niveau = -niveau;   // inversion si 1
-		}
-		// sinon on garde le même niveau
+			niveau = -niveau;
 
-		result.tbNRZi[i + 1] = niveau;
+			result.tnNRZi[i + 1] = niveau;
+		}
 	}
 
-	return(result);
+	return result;
+}
+
+struct st_temps ConvSJHMs1(int Time1)
+{
+	struct st_temps result;
+
+	// Constantes pour les conversions
+	const int SEC_MIN  = 60;
+	const int SEC_HOUR = 3600;           // 60 * 60
+	const int SEC_DAY  = 86400;          // 24 * 3600
+	const int SEC_WEEK = 604800;         // 7 * 86400
+	const int SEC_YEAR = 31536000;       // 365 jours
+
+
+	// Calcul année
+	result.annees = Time1 / SEC_YEAR;
+	Time1 %= SEC_YEAR;
+
+	// Calcul semaines
+	result.semaines = Time1 / SEC_WEEK;
+	Time1 %= SEC_WEEK;
+
+	// Calcul jours
+	result.jours = Time1 / SEC_DAY;
+	Time1 %= SEC_DAY;
+
+	// Calcul heures
+	result.heurs = Time1 / SEC_HOUR;
+	Time1 %= SEC_HOUR;
+
+	// Calcul minutes
+	result.minutes = Time1 / SEC_MIN;
+	Time1 %= SEC_MIN;
+
+	// Ce qu'il reste = secondes
+	result.secondes = Time1;
+	return result;
+}
+
+struct st_temps ConvSJHMs2(int Time2)
+{
+	struct st_temps result;
+
+	// Constantes pour les conversions
+	const int SEC_MIN = 60;
+	const int SEC_HOUR = 3600;           // 60 * 60
+	const int SEC_DAY = 86400;          // 24 * 3600
+	const int SEC_WEEK = 604800;         // 7 * 86400
+	const int SEC_YEAR = 31536000;       // 365 jours
+
+
+	// Calcul année
+	result.annees = Time2 / SEC_YEAR;
+	Time2 %= SEC_YEAR;
+
+	// Calcul semaines
+	result.semaines = Time2 / SEC_WEEK;
+	Time2 %= SEC_WEEK;
+
+	// Calcul jours
+	result.jours = Time2 / SEC_DAY;
+	Time2 %= SEC_DAY;
+
+	// Calcul heures
+	result.heurs = Time2 / SEC_HOUR;
+	Time2 %= SEC_HOUR;
+
+	// Calcul minutes
+	result.minutes = Time2 / SEC_MIN;
+	Time2 %= SEC_MIN;
+
+	// Ce qu'il reste = secondes
+	result.secondes = Time2;
+
+	return result;
 }
