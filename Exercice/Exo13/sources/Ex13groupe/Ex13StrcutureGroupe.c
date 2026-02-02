@@ -19,6 +19,7 @@
 #include <stdio.h>			// entrée/sortie 
 #include <stdlib.h>			// lib standard -> fonctions system 
 #include <stdint.h>			// types entiers normalisés
+#include <math.h>
 
 //-- déclration de librairies personnelles --// 
 
@@ -50,10 +51,9 @@ struct st_temps
 	int secondes;
 };
 
-
 struct str_tbInfoRIUP
 {
-	uint16_t tbR[TAILLE_TB_RIUP];		//	tableau de 5 résitances 
+	uint16_t tbR[TAILLE_TB_RIUP];		//	tableau 5 résitances 
 	float	 tbI[TAILLE_TB_RIUP];		//	tableau 5 courant 
 	int8_t	 tbU[TAILLE_TB_RIUP];		//	tableau 5 tension 
 	float	 tbP[TAILLE_TB_RIUP];		//  tableau 5 Puissance 
@@ -71,6 +71,9 @@ struct st_tbCode codage(const int8_t tab[], int taille);
 struct st_temps ConvSJHMs1(int Time1);
 struct st_temps ConvSJHMs2(int Time2);
 
+void LoiOhm(struct str_tbInfoRIUP* pt, int taille);
+
+
 //-- programme principale --//
 void main()
 {
@@ -79,8 +82,8 @@ void main()
 
 	int Time1 = 654852;	// [s]
 	int Time2 = 1225453; // [s]
-	 
-	struct str_tbInfoRIUP infosRIUP; 
+
+	struct str_tbInfoRIUP infosRIUP;
 
 	struct str_trioTR infoCotes; 
 
@@ -110,12 +113,12 @@ void main()
 			//-- affichage tb code NRZ -- 
 			else if (nbTb == 1)
 			{
-				printf("%d ", code.tbNRZ[i]);
+				printf("%d", code.tbNRZ[i]);
 			}
 			//-- affichage tb code NRZi
 			else
 			{
-				printf("%d ", code.tnNRZi[i]);
+				printf("%d", code.tnNRZi[i]);
 			}
 		}
 		//-- retour à la ligne --// 
@@ -143,24 +146,39 @@ void main()
 	//-- initialisation d'une partie de la structure --//  
 	infosRIUP.tbP[0] = 5.5;
 	infosRIUP.tbU[0] = -12;
+	infosRIUP.tbI[0] = 0;
+	infosRIUP.tbR[0] = 0;
+
 
 	infosRIUP.tbI[1] = 4.5 * pow(10, -3);
 	infosRIUP.tbR[1] = 4200;
+	infosRIUP.tbP[1] = 0;
+	infosRIUP.tbU[1] = 0;
 
 	infosRIUP.tbP[2] = 2.5; 
-	infosRIUP.tbR[2] = 72 * pow(10, 3);;
+	infosRIUP.tbR[2] = 72 * pow(10, 3);
+	infosRIUP.tbU[2] = 0;
+	infosRIUP.tbI[2] = 0;
 
 	infosRIUP.tbI[3] = .5;
 	infosRIUP.tbU[3] = 24;
+	infosRIUP.tbR[3] = 0;
+	infosRIUP.tbP[3] = 0;
 
 	infosRIUP.tbI[4] = 1; 
 	infosRIUP.tbP[4] = .1;
+	infosRIUP.tbU[4] = 0;
+	infosRIUP.tbR[4] = 0;
 
 	//-- appel de la fonction pour calculer la loi ohm sur des tableaux de structure --// 
+	LoiOhm( &infosRIUP, TAILLE_TB_RIUP);
 
 	//-- afficher les information 4 éléments RIUP pour 5 données --// 
-	printf("R = ?? | I = ?? | U = ?? | P = ??"); 
-
+	for (char i = 0; i <= 5; i++)
+	{
+		printf(" case %d : R = %f | I = %f | U = %f | P = %f\n", i, infosRIUP.tbR[i], infosRIUP.tbI[i], infosRIUP.tbU[i], infosRIUP.tbP[i]);
+	}
+	
 	//-- retour à la ligne --// 
 	printf("\n\n");
 
@@ -198,18 +216,23 @@ struct st_tbCode codage(const int8_t tab[], int taille)
 	}
 
 	// NRZi
-	result.tnNRZi[0] = 5;   // valeur de départ
-
+	//Le NRZI contrairement au NRZ crée un changement d'état si le bit est 1, et reste à l'état précédent si le bit est 0.
 	for (int i = 0; i < taille; i++)
 	{
 		if (tab[i] == 1)
 		{
-			niveau = -niveau;
+			result.tnNRZi[i] = 5;
+		}
+		else
+		{
+			result.tnNRZi[i] = result.tbNRZ[i];
+		}
 
-			result.tnNRZi[i + 1] = niveau;
+		if ((tab[0] == 0) && (i == 0))
+		{
+			result.tnNRZi[0] = 4;
 		}
 	}
-
 	return result;
 }
 
@@ -286,4 +309,36 @@ struct st_temps ConvSJHMs2(int Time2)
 	result.secondes = Time2;
 
 	return result;
+}
+
+void LoiOhm(struct str_tbInfoRIUP* pt, int taille)
+{
+	for (char i = 0; i <= taille; i++)
+	{
+		if ((pt->tbI[i] == 0) && (pt->tbR[i] == 0))
+		{
+			pt->tbI[i] = pt->tbP[i] / pt->tbU[i];
+			pt->tbR[i] = (pt->tbU[i] / pt->tbP[i]) * pt->tbU[i];
+		}
+		else if ((pt->tbU[i] == 0) && (pt->tbP[i] == 0))
+		{
+			pt->tbU[i] = pt->tbR[i] * pt->tbI[i];
+			pt->tbP[i] = (pt->tbR[i] * pt->tbI[i]) * pt->tbI[i];
+		}
+		else if ((pt->tbU[i] == 0) && (pt->tbI[i] == 0))
+		{
+			pt->tbU[i] = sqrt(pt->tbP[i] * pt->tbR[i]);
+			pt->tbI[i] = sqrt(pt->tbP[i] / pt->tbR[i]);
+		}
+		else if ((pt->tbR[i] == 0) && (pt->tbP[i] == 0))
+		{
+			pt->tbR[i] = pt->tbU[i] / pt->tbI[i];
+			pt->tbP[i] = pt->tbU[i] * pt->tbI[i];
+		}
+		else if ((pt->tbU[i] == 0) && (pt->tbR[i] == 0))
+		{
+			pt->tbU[i] = pt->tbI[i] / pt->tbP[i];
+			pt->tbR[i] = (pt->tbP[i] / pt->tbI[i]) * pt->tbI[i];
+		}
+	}
 }
