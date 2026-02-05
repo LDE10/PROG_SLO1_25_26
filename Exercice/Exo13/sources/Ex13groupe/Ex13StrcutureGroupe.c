@@ -53,9 +53,9 @@ struct st_temps
 
 struct str_tbInfoRIUP
 {
-	uint16_t tbR[TAILLE_TB_RIUP];		//	tableau 5 résitances 
+	float tbR[TAILLE_TB_RIUP];		//	tableau 5 résitances 
 	float	 tbI[TAILLE_TB_RIUP];		//	tableau 5 courant 
-	int8_t	 tbU[TAILLE_TB_RIUP];		//	tableau 5 tension 
+	float	 tbU[TAILLE_TB_RIUP];		//	tableau 5 tension 
 	float	 tbP[TAILLE_TB_RIUP];		//  tableau 5 Puissance 
 };
 
@@ -72,6 +72,8 @@ struct st_temps ConvSJHMs1(int Time1);
 struct st_temps ConvSJHMs2(int Time2);
 
 void LoiOhm(struct str_tbInfoRIUP* pt, int taille);
+
+void trigoTR(struct infoCotes* pt);
 
 
 //-- programme principale --//
@@ -160,13 +162,13 @@ void main()
 	infosRIUP.tbU[2] = 0;
 	infosRIUP.tbI[2] = 0;
 
-	infosRIUP.tbI[3] = .5;
+	infosRIUP.tbI[3] = 0.5;
 	infosRIUP.tbU[3] = 24;
 	infosRIUP.tbR[3] = 0;
 	infosRIUP.tbP[3] = 0;
 
-	infosRIUP.tbI[4] = 1; 
-	infosRIUP.tbP[4] = .1;
+	infosRIUP.tbI[4] = 1.0; 
+	infosRIUP.tbP[4] = 0.1;
 	infosRIUP.tbU[4] = 0;
 	infosRIUP.tbR[4] = 0;
 
@@ -174,11 +176,11 @@ void main()
 	LoiOhm( &infosRIUP, TAILLE_TB_RIUP);
 
 	//-- afficher les information 4 éléments RIUP pour 5 données --// 
-	for (char i = 0; i <= 5; i++)
+	for (char i = 0; i < 5; i++)
 	{
 		printf(" case %d : R = %f | I = %f | U = %f | P = %f\n", i, infosRIUP.tbR[i], infosRIUP.tbI[i], infosRIUP.tbU[i], infosRIUP.tbP[i]);
 	}
-	
+
 	//-- retour à la ligne --// 
 	printf("\n\n");
 
@@ -187,11 +189,13 @@ void main()
 	infoCotes.adj = 5; 
 	infoCotes.aplha_degre = 45; 
 
-	printf("cote oppose vaut : "); 
-	printf("cote adjacent vaut : ");
-	printf("cote hypotenuse vaut : ");
-	printf("angle alpha radian : ");
-	printf("angle alpha degre : ");
+	trigoTR(&infoCotes);
+
+	printf("cote oppose vaut : %d\n", );
+	printf("cote adjacent vaut : %d\n", infoCotes.adj);
+	printf("cote hypotenuse vaut : %d\n", );
+	printf("angle alpha radian : %f\n", );
+	printf("angle alpha degre : %d\n", infoCotes.aplha_degre);
 
 	system("pause");	// -> environnement windows 
 }
@@ -342,3 +346,11 @@ void LoiOhm(struct str_tbInfoRIUP* pt, int taille)
 		}
 	}
 }
+
+void trigoTR(struct infoCotes *pt)
+{
+	float PI = 3.1415;
+
+	pt->alpha_radian = pt->aplha_degre * (PI / 180);
+}
+
