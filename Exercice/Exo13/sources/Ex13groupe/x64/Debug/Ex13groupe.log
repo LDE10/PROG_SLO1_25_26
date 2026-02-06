@@ -1,11 +1,17 @@
 ﻿  Ex13StrcutureGroupe.c
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(137,164): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(137,164): message : les espaces réservés et leurs paramètres attendent des arguments 5 variadiques, mais des arguments 6 ont été fournis
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(140,165): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(140,165): message : les espaces réservés et leurs paramètres attendent des arguments 5 variadiques, mais des arguments 6 ont été fournis
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(153,25): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(159,24): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(169,24): warning C4305: '=' : troncation de 'double' à 'float'
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(330,17): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(331,17): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(139,164): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(139,164): message : les espaces réservés et leurs paramètres attendent des arguments 5 variadiques, mais des arguments 6 ont été fournis
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(142,165): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(142,165): message : les espaces réservés et leurs paramètres attendent des arguments 5 variadiques, mais des arguments 6 ont été fournis
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(155,25): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(161,24): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(171,24): warning C4305: '=' : troncation de 'double' à 'float'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(191,20): warning C4133: 'fonction' : types incompatibles - de 'str_trioTR *' à 'infoCotes *'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(333,17): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(334,17): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(349,33): warning C4028: paramètre formel 1 différent de la déclaration
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(355,8): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(358,8): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(359,32): warning C4244: '=' : conversion de 'float' en 'int8_t', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\Ex13StrcutureGroupe.c(351,1): warning C4305: 'initialisation' : troncation de 'double' à 'float'
   Ex13groupe.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13groupe\x64\Debug\Ex13groupe.exe

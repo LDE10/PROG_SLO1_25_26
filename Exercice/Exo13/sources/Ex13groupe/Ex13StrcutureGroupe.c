@@ -190,10 +190,10 @@ void main()
 
 	trigoTR(&infoCotes);
 
-	printf("cote oppose vaut : %d\n", );
+	printf("cote oppose vaut : %d\n", infoCotes.opp);
 	printf("cote adjacent vaut : %d\n", infoCotes.adj);
-	printf("cote hypotenuse vaut : %d\n", );
-	printf("angle alpha radian : %f\n", );
+	printf("cote hypotenuse vaut : %d\n", infoCotes.hyp);
+	printf("angle alpha radian : %f\n", infoCotes.alpha_radian);
 	printf("angle alpha degre : %d\n", infoCotes.aplha_degre);
 
 	system("pause");	// -> environnement windows 
@@ -349,7 +349,15 @@ void LoiOhm(struct str_tbInfoRIUP* pt, int taille)
 void trigoTR(struct str_trioTR* pointeur)
 {
 	float PI = 3.1415;
-	
-	
+	int TAN = 0;
+	float COS = 0;
+
+	TAN = tan(pointeur->aplha_degre);
+	pointeur->opp =  TAN * pointeur->adj;
+
+	COS = cos(pointeur->aplha_degre);
+	pointeur->hyp = pointeur->adj / COS;
+
+	pointeur->alpha_radian = pointeur->aplha_degre * (PI / 180);
 }
 
