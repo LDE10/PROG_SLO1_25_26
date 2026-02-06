@@ -73,7 +73,7 @@ struct st_temps ConvSJHMs2(int Time2);
 
 void LoiOhm(struct str_tbInfoRIUP* pt, int taille);
 
-void trigoTR(struct infoCotes* pt);
+void trigoTR(struct infoCotes* pointeur);
 
 
 //-- programme principale --//
@@ -183,7 +183,6 @@ void main()
 
 	//-- retour à la ligne --// 
 	printf("\n\n");
-
 
 	//-- PARTIE D - GROUPE 4 --// 
 	infoCotes.adj = 5; 
@@ -347,10 +346,10 @@ void LoiOhm(struct str_tbInfoRIUP* pt, int taille)
 	}
 }
 
-void trigoTR(struct infoCotes *pt)
+void trigoTR(struct str_trioTR* pointeur)
 {
 	float PI = 3.1415;
-
-	pt->alpha_radian = pt->aplha_degre * (PI / 180);
+	
+	
 }
 
