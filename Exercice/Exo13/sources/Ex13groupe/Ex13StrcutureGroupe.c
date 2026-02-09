@@ -53,7 +53,7 @@ struct st_temps
 
 struct str_tbInfoRIUP
 {
-	float tbR[TAILLE_TB_RIUP];		//	tableau 5 résitances 
+	float	 tbR[TAILLE_TB_RIUP];		//	tableau 5 résitances 
 	float	 tbI[TAILLE_TB_RIUP];		//	tableau 5 courant 
 	float	 tbU[TAILLE_TB_RIUP];		//	tableau 5 tension 
 	float	 tbP[TAILLE_TB_RIUP];		//  tableau 5 Puissance 
@@ -348,15 +348,18 @@ void LoiOhm(struct str_tbInfoRIUP* pt, int taille)
 
 void trigoTR(struct str_trioTR* pointeur)
 {
-	float PI = 3.1415;
-	int TAN = 0;
+	float PI = 3.14159265358979;
+	float radTAN = 0;
+	float TAN = 0;
 	float COS = 0;
+	float radCOS = 0;
 
-	TAN = tan(pointeur->aplha_degre);
-	pointeur->opp =  TAN * pointeur->adj;
+	radTAN = pointeur->aplha_degre * (PI / 180);
+	TAN = tan(radTAN);
+	pointeur->opp = TAN  * pointeur->adj;
 
-	COS = cos(pointeur->aplha_degre);
-	pointeur->hyp = pointeur->adj / COS;
+	radCOS = pointeur->aplha_degre * (PI / 180);
+	pointeur->hyp = pointeur->adj / cos(radCOS);
 
 	pointeur->alpha_radian = pointeur->aplha_degre * (PI / 180);
 }
