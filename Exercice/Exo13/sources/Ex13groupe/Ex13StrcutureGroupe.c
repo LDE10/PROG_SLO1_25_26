@@ -151,7 +151,6 @@ void main()
 	infosRIUP.tbI[0] = 0;
 	infosRIUP.tbR[0] = 0;
 
-
 	infosRIUP.tbI[1] = 4.5 * pow(10, -3);
 	infosRIUP.tbR[1] = 4200;
 	infosRIUP.tbP[1] = 0;

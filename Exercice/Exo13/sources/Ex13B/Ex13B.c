@@ -5,25 +5,35 @@
 #include <stdio.h>
 
 // type structure fourni
-typedef struct {
+ struct S_TroisNotes {
 	float NoteTe1;
 	float NoteTe2;
 	float NoteTe3;
-} S_TroisNotes ;
+};
 
-typedef struct {
-	S_TroisNotes EleveA;
-	S_TroisNotes EleveB;
-	S_TroisNotes EleveC;
-} S_AllNotes ;
+ struct S_AllNotes {
+
+	struct S_TroisNotes EleveA;
+	struct S_TroisNotes EleveB;
+	struct S_TroisNotes EleveC;
+};
 
 // definition du type S_AllMoyennes
-
-
+struct S_AllMoyennes
+{
+	float MoyA;
+	float MoyB;
+	float MoyC;
+};
 
 // Fonction CalculAllMoyennes
+struct S_AllMoyennes CalculAllMoyennes(struct S_AllNotes *pt)
+{
+	struct S_AllMoyennes moyenne;
 
+	moyenne.MoyA = pt->EleveA
 
+}
 
 // Fonction CalculAllMoyTestB
 
@@ -45,8 +55,7 @@ int main (void)
 	// Modification de la note 1 de l'élève B à 4.5
 
 	// A adapter !!!
-	printf("Ex13B Prenom NOM \n");
-
+	printf("Ex13B Luc Derre \n");
 	do {
 		printf("Test A ou B, Q pour Quitter \n");
 		scanf_s("%c%*c", &UserAnswer, 2);
@@ -56,9 +65,9 @@ int main (void)
 			case 'a':
 				printf("TestA:  \n");
 				// Appel de CalculAllMoyennes
-
+				struct S_AllMoyennes Moyenne = CalculAllMoyennes(&ValA);
 				// Affichage des moyennes
-
+				//printf("MoyA = %f MoyB = %f MoyC = %f\n", );
 
 			break;
 
