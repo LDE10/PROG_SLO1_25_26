@@ -31,12 +31,18 @@ struct S_AllMoyennes CalculAllMoyennes(struct S_AllNotes *pt)
 {
 	struct S_AllMoyennes moyenne;
 
-	moyenne.MoyA = pt->EleveA
+	moyenne.MoyA = (pt->EleveA.NoteTe1 + pt->EleveA.NoteTe2 + pt->EleveA.NoteTe3) / 3;
+	moyenne.MoyB = (pt->EleveB.NoteTe1 + pt->EleveB.NoteTe2 + pt->EleveB.NoteTe3) / 3;
+	moyenne.MoyC = (pt->EleveC.NoteTe1 + pt->EleveC.NoteTe2 + pt->EleveC.NoteTe3) / 3;
 
+	return moyenne;
 }
 
 // Fonction CalculAllMoyTestB
+void CalculAllMoyTestB(struct S_AllMoyennes* pt1, struct S_AllNotes *pt2)
+{
 
+}
 
 
 // Programme principal
@@ -44,15 +50,19 @@ int main (void)
 {
 	char UserAnswer;
 	// Variables pour test A
-	S_AllNotes ValA = {
+	struct S_AllNotes ValA = {
 		{5.5, 5.0, 5.0},
 		{4.0, 4.5, 5.0},
 		{3.5, 4.0, 4.0} };
 	
-
 	// Variables pour test B
-	
+	struct S_AllMoyennes ResB;
+
 	// Modification de la note 1 de l'élève B à 4.5
+	struct S_AllNotes ValB = {
+	{5.5, 5.0, 5.0},
+	{4.5, 4.5, 5.0},
+	{3.5, 4.0, 4.0} };
 
 	// A adapter !!!
 	printf("Ex13B Luc Derre \n");
@@ -66,8 +76,9 @@ int main (void)
 				printf("TestA:  \n");
 				// Appel de CalculAllMoyennes
 				struct S_AllMoyennes Moyenne = CalculAllMoyennes(&ValA);
+
 				// Affichage des moyennes
-				//printf("MoyA = %f MoyB = %f MoyC = %f\n", );
+				printf("MoyA = %f MoyB = %f MoyC = %f\n", Moyenne.MoyA, Moyenne.MoyB, Moyenne.MoyC);
 
 			break;
 
@@ -75,7 +86,8 @@ int main (void)
 			case 'b':
 				printf("TestB:  \n");
 				// Appel de CalculAllMoyTestB
-				
+				CalculAllMoyTestB(&ResB, &ValB);
+
 				// Affichage des moyennes
 				
 			break;
