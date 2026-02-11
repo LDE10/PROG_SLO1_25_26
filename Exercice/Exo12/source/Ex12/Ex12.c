@@ -18,13 +18,17 @@ int main (void)
 	double item = 0;
 
 	// Variables pour test B
-	
+	int ValB = 0;
+
+	char MatriceB[16][4] =
+	{
+		{0,0,0,0}, {1,0,0,0}, {0,1,0,0}, {1,1,0,0}, {0,0,1,0}, {1,0,1,0}, {0,1,1,0}, {1,1,1,0}, {0,0,0,1}, {1,0,0,1}, {0,1,0,1}, {1,1,0,1}, {0,0,1,1},
+		{1,0,1,1}, {0,1,1,1}, {1,1,1,1}
+	};
 
 	printf("Ex12  Luc Derre \n");  
 
 	// Boucle initialisation du tableau du testA
-
-
 	do {
 		printf("Test A ou B, Q pour Quitter \n");
 		scanf_s("%c%*c", &UserAnswer, 2);
@@ -45,10 +49,13 @@ int main (void)
 			case 'B':
 			case 'b':
 				printf("TestB: entrez le numero de ligne (max 15) \n");
-				// suite test B 
+				scanf_s("%d", &ValB);
 
+				if (ValB < 16)
+				{
+					printf("Test B : No ligne = %d [3] = %d [2] = %d [1] = %d [0] = %d\n", ValB, MatriceB[ValB][3], MatriceB[ValB][2], MatriceB[ValB][1], MatriceB[ValB][0]);
+				}
 			break;
-
 		} // end switch
 	
 	} while (!(UserAnswer == 'Q' || UserAnswer == 'q'));
