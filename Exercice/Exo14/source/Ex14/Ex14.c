@@ -11,6 +11,16 @@ struct S_hms
 };
 
 // Structure S_hms_D
+struct S_hms_D
+{
+	short TabHMS [3];
+};
+
+//structure ResD
+struct ResD
+{
+	int NbSec;
+};
 
 // Fonction CalSec
 CalcSec(HeuresA, MinutesA)
@@ -59,7 +69,19 @@ struct S_hms GetHMS_C(ValC)
 }
 
 // Fonction GetHMS_D
+void GetHMS_D(struct ResD *pt, struct S_hms_D *ptr)
+{
+	int SecH = 3600;
+	int SecM = 60;
+	int rest = 0;
 
+	ptr->TabHMS[2] = pt->NbSec / SecH;
+
+	rest = pt->NbSec % SecH;
+	ptr->TabHMS[1] = rest / SecM;
+
+	ptr->TabHMS[0] = rest % SecM;
+}
 
 int main (void)
 {
@@ -124,9 +146,13 @@ int main (void)
 			case 'd':
 				printf("TestD: entrez un nombre de secondes \n");
 				scanf_s("%d%*c", &ValD);
-				// Suite TestD
 
-				printf("TestD : %d sec represente %d [h] %d [m] %d [s]\n", ValD, );
+				struct ResD time = { ValD };
+				struct S_hms_D time2;
+
+				GetHMS_D(&time, &time2);
+
+				printf("TestD : %d sec represente %d [h] %d [m] %d [s]\n", ValD, time2.TabHMS[2], time2.TabHMS[1], time2.TabHMS[0]);
 
 			break;
 		} // end switch
