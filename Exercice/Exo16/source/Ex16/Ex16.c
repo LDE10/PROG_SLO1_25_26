@@ -18,11 +18,12 @@ int main (void)
 	short sortie;
 
 	// Taille minimum = short, même avec préfixe h dans scanf
-	unsigned short day, month;
+	unsigned short day;
+	unsigned short month;
 	unsigned short year;
-	
-	// A adapter !!
-	printf ("Ex16 Nom Prenom \n");
+
+
+	printf ("Ex16 Derre Luc \n");
 	
 	sortie = 0; // faux, reste dans la boucle
 	do {
@@ -35,12 +36,12 @@ int main (void)
 			case 't':
 				// Test (Exercice champs de bit)
 				printf("Entrez jour mois annee ! \n");
-				scanf_s("%hd%hd%hd%*c", &day, &month, &year);
-				// introduisez l'appel de ZipDate ICI
+				scanf_s("%hd %hd %hd%*c", &day, &month, &year);
 
+				unsigned short date1 = ZipDate(day, month, year);
 
 				// Affichage du résultat
-
+				printf("Date compressee en hexa %x\n", date1);
 
 			break;
 
@@ -53,4 +54,10 @@ int main (void)
 	} while (sortie == 0);
 
 	return (0);
+}
+
+ZipDate(day, month, year)
+{
+	unsigned char d = day;
+	unsigned char m = month;
 }

@@ -147,7 +147,7 @@ int main (void)
 				printf("TestD: entrez un nombre de secondes \n");
 				scanf_s("%d%*c", &ValD);
 
-				struct ResD time = { ValD };
+				struct ResD time = {ValD};
 				struct S_hms_D time2;
 
 				GetHMS_D(&time, &time2);
