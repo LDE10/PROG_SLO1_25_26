@@ -1,0 +1,6 @@
+﻿  Ex13.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13_StructuresEtFonctions\Ex13.c(57,6): warning C4101: 'ResDiv' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13_StructuresEtFonctions\Ex13.c(61,21): warning C4101: 'ResDiz' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13_StructuresEtFonctions\Ex13.c(57,14): warning C4101: 'ResteDiv' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13_StructuresEtFonctions\Ex13.c(61,12): warning C4101: 'ResCent' : variable locale non référencée
+  Ex13_StructuresEtFonctions.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo13\sources\Ex13_StructuresEtFonctions\Ex13_StructuresEtFonctions\x64\Debug\Ex13_StructuresEtFonctions.exe
