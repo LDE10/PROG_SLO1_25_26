@@ -1,4 +1,4 @@
 ﻿  Ex17.c
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(85,40): warning C4047: '=' : les niveaux d'indirection de 'char' et de 'char [2]' sont différents
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(91,40): warning C4047: '=' : les niveaux d'indirection de 'char' et de 'char [2]' sont différents
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(102,31): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(103,12): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
   Ex17.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17\x64\Debug\Ex17.exe

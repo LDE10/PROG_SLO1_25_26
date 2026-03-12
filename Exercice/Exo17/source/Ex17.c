@@ -2,12 +2,9 @@
 
 #include <stdio.h>
 
-
-
 // Definition de S_Frame
 typedef struct 
 {
-	char TypeInfo;
 	int P1X;
 	int P1Y;
 	int P2X;
@@ -16,7 +13,6 @@ typedef struct
 
 typedef struct
 {
-	char TypeInfo;
 	int CentreX;
 	int CentreY;
 	int Longueur;
@@ -28,7 +24,6 @@ typedef union
 {
 	S_Frame1 DefSeg1;
 	S_Frame2 DefSeg2;
-	int Vue;
 }U_Frame;
 
 // Definition de S_DefSegment
@@ -42,17 +37,77 @@ typedef struct
 // Fonction ShowSeg
 ShowSeg(S_DefSegment* pt)
 {
-	int test;
+	int choix;
 
-	for (char i = 0; i < 5; i++)
+	if (pt->TypeInfo == 'R')
 	{
-		if (i == 0)
+		for (char i = 1; i < 6; i++)
 		{
-			test = pt->Valeur.DefSeg1.TypeInfo;
-			printf("%c", test);
+			switch (i)
+			{
+			case 1:
+				choix = pt->TypeInfo;
+				printf("TypeInfo = %c ", choix);
+				break;
+
+			case 2:
+				choix = pt->Valeur.DefSeg1.P1X;
+				printf("Pose1X = %d ", choix);
+				break;
+
+			case 3:
+				choix = pt->Valeur.DefSeg1.P1Y;
+				printf("Pose1Y = %d ", choix);
+				break;
+
+			case 4:
+				choix = pt->Valeur.DefSeg1.P2X;
+				printf("Pose2X = %d ", choix);
+				break;
+
+			case 5:
+				choix = pt->Valeur.DefSeg1.P2Y;
+				printf("Pose2Y = %d\n", choix);
+				break;
+			}
 		}
 	}
+	else if (pt->TypeInfo == 'P')
+	{
+		for (char i = 1; i < 6; i++)
+		{
+			switch (i)
+			{
+			case 1:
+				choix = pt->TypeInfo;
+				printf("TypeInfo = %c ", choix);
+				break;
+
+			case 2:
+				choix = pt->Valeur.DefSeg2.CentreX;
+				printf("CentreX = %d ", choix);
+				break;
+
+			case 3:
+				choix = pt->Valeur.DefSeg2.CentreY;
+				printf("CentreY = %d ", choix);
+				break;
+
+			case 4:
+				choix = pt->Valeur.DefSeg2.Longueur;
+				printf("Longueur = %d ", choix);
+				break;
+
+			case 5:
+				choix = pt->Valeur.DefSeg2.angle;
+				printf("Angle = %f\n", choix);
+				break;
+			}
+		}
+
+	}
 }
+
 
 // Fonction ShowFrame
 
@@ -63,8 +118,7 @@ int main (void)
 {
 	char UserAnswer;
 	// Variables pour test A
-	int test;
-
+	// 
 	// Variables pour test B
 	
 
@@ -82,22 +136,27 @@ int main (void)
 				// Initialisation champ par champ
 				S_DefSegment fonct;
 
-				fonct.Valeur.DefSeg1.TypeInfo = "R";
+				fonct.TypeInfo = 'R';
 				fonct.Valeur.DefSeg1.P1X = 20;
 				fonct.Valeur.DefSeg1.P1Y = 25;
 				fonct.Valeur.DefSeg1.P2X = 150;
 				fonct.Valeur.DefSeg1.P2Y = 170;
+				if (fonct.TypeInfo == 'R')
+				{
+					ShowSeg(&fonct);
+				}
 
-				fonct.Valeur.DefSeg2.TypeInfo = "P";
+				fonct.TypeInfo = 'P';
 				fonct.Valeur.DefSeg2.CentreX = 20;
 				fonct.Valeur.DefSeg2.CentreY = 25;
 				fonct.Valeur.DefSeg2.Longueur = 120;
 				fonct.Valeur.DefSeg2.angle = 44.5;
+				if (fonct.TypeInfo == 'P')
+				{
+					ShowSeg(&fonct);
+				}
 
 				// Appel des fonctions pour affichage
-				test = ShowSeg(&fonct);
-
-				printf("%d = %d\n", test, test);
 
 			break;
 
