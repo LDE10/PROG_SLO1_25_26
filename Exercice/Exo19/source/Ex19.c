@@ -4,17 +4,42 @@
 #include <stdio.h>
 #include <string.h>  // pour manipulation de String
 
+struct R1
+{
+	double hauteur;
+	double largeur;
+	double surface;
+};
+
+struct R2
+{
+	double hauteur;
+	double largeur;
+	double surface;
+};
+
+typedef union 
+{
+	struct R1 Rectangle1;
+	struct R2 Rectangle2;
+}U_Rtot;
+
 // Definition S_DefRectangle
+typedef struct 
+{
+	U_Rtot Rectangle;
+	char Text1[16];
+	char Texte2[16];
+
+}S_DefRectangle;
 
 // Definition S_Frame
-
 
 
 // Definition U_Frame
 
 
 // Fonction ShowInfo
-
 
 
 // Fonction ShowFrame
@@ -31,7 +56,7 @@ int main (void)
 	
 
 	// A adapter !!!
-	printf("Ex19 Prenom NOM \n");
+	printf("Ex19 Luc Derre \n");
 
 	do {
 		printf("Test A ou B, Q pour Quitter \n");
@@ -42,6 +67,7 @@ int main (void)
 			case 'a':
 				printf("TestA:  \n");
 				// Initialisation champ par champ
+
 				// Pour DefRect1 :  "Surface" , 22.5, 37.2  surface par calcul
 				
 				
