@@ -1,4 +1,5 @@
 ﻿  Ex17.c
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(102,31): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(103,12): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'int'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(161,12): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'size_t'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(161,12): message : utilisez '%zd' dans la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(159,1): warning C4133: 'initialisation' : types incompatibles - de 'u_Frame1 *' à 'char *'
   Ex17.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17\x64\Debug\Ex17.exe
