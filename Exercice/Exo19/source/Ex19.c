@@ -4,33 +4,34 @@
 #include <stdio.h>
 #include <string.h>  // pour manipulation de String
 
-struct R1
+struct DefRect1
 {
+	
 	double hauteur;
 	double largeur;
 	double surface;
 };
 
-struct R2
+struct DefRect2
 {
+	char *Text2[16];
 	double hauteur;
 	double largeur;
-	double surface;
+	double perimetre;
 };
 
 typedef union 
 {
-	struct R1 Rectangle1;
-	struct R2 Rectangle2;
+	struct DefRect1 Rectangle1;
+	struct DefRect2 Rectangle2;
 }U_Rtot;
 
 // Definition S_DefRectangle
 typedef struct 
 {
-	U_Rtot Rectangle;
+	U_Rtot Rectangles;
 	char Text1[16];
-	char Texte2[16];
-
+	
 }S_DefRectangle;
 
 // Definition S_Frame
@@ -67,7 +68,17 @@ int main (void)
 			case 'a':
 				printf("TestA:  \n");
 				// Initialisation champ par champ
+				S_DefRectangle rectanlge;
 
+
+				rectanlge.Rectangles.Rectangle1.hauteur = 22.5;
+				rectanlge.Rectangles.Rectangle1.largeur = 37.2;
+				rectanlge.Rectangles.Rectangle1.surface = rectanlge.Rectangles.Rectangle1.largeur * rectanlge.Rectangles.Rectangle1.hauteur;
+
+				rectanlge.Rectangles.Rectangle2.hauteur = 19.4;
+				rectanlge.Rectangles.Rectangle2.largeur = 57.1;
+				rectanlge.Rectangles.Rectangle2.perimetre = (rectanlge.Rectangles.Rectangle2.largeur + rectanlge.Rectangles.Rectangle2.hauteur) * 2;
+				
 				// Pour DefRect1 :  "Surface" , 22.5, 37.2  surface par calcul
 				
 				
