@@ -41,7 +41,9 @@ struct S_AllMoyennes CalculAllMoyennes(struct S_AllNotes *pt)
 // Fonction CalculAllMoyTestB
 void CalculAllMoyTestB(struct S_AllMoyennes* pt1, struct S_AllNotes *pt2)
 {
-
+	pt1->MoyA = (pt2->EleveA.NoteTe1 + pt2->EleveA.NoteTe2 + pt2->EleveA.NoteTe3) / 3;
+	pt1->MoyB = (pt2->EleveB.NoteTe1 + pt2->EleveB.NoteTe2 + pt2->EleveB.NoteTe3) / 3;
+	pt1->MoyC = (pt2->EleveC.NoteTe1 + pt2->EleveC.NoteTe2 + pt2->EleveC.NoteTe3) / 3;
 }
 
 
@@ -79,7 +81,6 @@ int main (void)
 
 				// Affichage des moyennes
 				printf("MoyA = %f MoyB = %f MoyC = %f\n", Moyenne.MoyA, Moyenne.MoyB, Moyenne.MoyC);
-
 			break;
 
 			case 'B':
@@ -89,7 +90,7 @@ int main (void)
 				CalculAllMoyTestB(&ResB, &ValB);
 
 				// Affichage des moyennes
-				
+				printf("MoyA = %f MoyB = %f MoyC = %f\n", ResB.MoyA, ResB.MoyB, ResB.MoyC);
 			break;
 
 		} // end switch

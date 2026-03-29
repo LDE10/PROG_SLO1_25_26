@@ -1,0 +1,4 @@
+﻿  Ex17.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(85,40): warning C4047: '=' : les niveaux d'indirection de 'char' et de 'char [2]' sont différents
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17.c(91,40): warning C4047: '=' : les niveaux d'indirection de 'char' et de 'char [2]' sont différents
+  Ex17.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo17\source\Ex17\x64\Debug\Ex17.exe
