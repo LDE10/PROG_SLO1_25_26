@@ -11,23 +11,16 @@
 int main(void)
 {
 	char Rep;
-	// déclaration des 2 chaines
+
 	char Text1[40] = "Salut ";
-	// const char *Text1 = "Salut ";
-	// char Text1[] = "Salut " ;
 	const char *Text2 = "les copains";
-	
-	printf ("Ex18 C. HUBER \n");
 
-	
-	printf ("Text1 = %s \n", Text1);
-	printf ("Text2 = %s \n", Text2);
+	printf("Ex18 L. DERRE\nText 1 = %s\nText 2 = %s\n", Text1, Text2);
 
-	strcat (Text1, Text2);
+	strcat(Text1, Text2);
 
-	printf ("Text1 = %s \n", Text1);
-
-	printf ("Pressez enter pour quitter !");
+	printf("Text 1 = %s\n", Text1);
+	printf("Pressez enter pour quitter !");
 	scanf("%c", &Rep);
 
 	return (0);
