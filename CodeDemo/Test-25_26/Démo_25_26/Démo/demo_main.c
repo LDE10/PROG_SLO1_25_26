@@ -26,6 +26,16 @@
 #define FOIX_2 2
 #define PI 3.14
 
+//-- définition structure--//
+struct str_gestLED		//la place d'octet dépend des octet des variables ou autre utilisé
+{
+	char ledR;				//1 octet
+	char ledG;				//1 octet
+	char ledB;				//1 octet
+	float luminosite;		//4 octet
+	short* ptnombreled;		//2 octet
+};
+
 //-- constante globale --//
 
 
@@ -38,7 +48,7 @@
 //-- paramètre IN-OUT : -
 //-- description	  : programme principal =>
 //--------------------------------------------------------------------------//
-void main() 
+void main()
 {
 	//-- constante  --//
 	//-- reel
@@ -48,6 +58,9 @@ void main()
 	//-- variable--//
 	//-- Entier standard
 	//-- Signé (+/-)
+
+	char tbExemple[10];		//10 octet
+
 	char		varchar1;	// 1 octet						/ 8 bits
 	short		varshort1;	// 2 octet						/ 16 bits
 	int			varint1;	// 4 octet   1 int = 1 long		/ 32 bits
@@ -74,7 +87,7 @@ void main()
 
 	//-- type entier type booléen --//
 	bool varS;	// 1 octet
-	
+
 	printf("Taille d'un booleen %d [Octet]\n", sizeof(varS));
 
 	//-- définition d'un type enumeration locale --//
@@ -123,12 +136,12 @@ void main()
 	// variable ++ = post incrémentation
 	// -- variable = pre incrémentation
 	// varj += 1; veut dire varj = varj + 1;
-	 
+
 
 	//-- machine état --//
 	switch (formeGeo)
 	{
-	case CERCLE :
+	case CERCLE:
 		//-- instruction 1
 		//-- instruction 2
 		break;
@@ -138,21 +151,23 @@ void main()
 		//-- instruction 2
 		break;
 
-	case RECTANGLE :
-	case CARRE :
+	case RECTANGLE:
+	case CARRE:
 		//-- instruction 1
 		//-- instruction 2
 		break;
 
-	default :
+	default:
 		break;
 	}
 
 	//-- itération --//
 	//-> 1) condition 2) exécution si c'est vrai
 	//-- boucle infinie
+/*
 	while (1)
-	{ }
+	{
+	}
 
 	uint8_t i = 0, j = 100;
 	while (i < j)
@@ -171,16 +186,45 @@ void main()
 
 	//-- pour les compteurs --> le développeur connait le nombre d'itération
 	//-- boucle à l'infini
-	for (;;) 
+	/ (;;)
 	{
 	}
 
 	//-> 1) initialisation plusieur variables 2) conditions 3) opération
-	for (i = 0, j = 100; i < j ; i++, j--)
+	for (i = 0, j = 100; i < j; i++, j--)
 	{
 	}
+*/
+	//--Déclaration structure--//
+	//--Structure locale--//
+	struct str_gestLED mesleds;
+//	struct str_gestLED mesleds = { 0, 0, 0, 0.0, &tbExemple }; //Led R, G, B, lum, nb
 
+	// autre exemple "mesleds.ledB = 0;"
 
+	//--Structure globale--//
+	str_transistor montransistor = { 100, 0.7, 0, 0 };	//gain, Vbe, cas 1 du tableau, case 2 du tableau (autre exemple pour le tableau {0}, toutes les cases du tableau seront à 0)
+
+	//DemoStruct(&montransistor);
+
+	str_enteteEthernet ethernet1;
+
+	int vark = sizeof(str_enteteEthernet);
+
+	//--gestion union--//
+	u_ethernet ethernet2;
+
+	ethernet2.trame = 0x12345678;
+
+	varint1 = ethernet2.decodageTrame.version;
+	varint2 = ethernet2.decodageTrame.longueurEntete;
+	varfloat = ethernet2.decodageTrame.longueurTotal;
+}
+
+void DemoStruct(str_transistor *transistor)
+{
+	transistor->Vbe = 0.6;
+	(*transistor).gain = 120;
 }
 
 

@@ -259,5 +259,3 @@ struct S_AllNotes ValA = {
 struct S_AllMoyennes Moyenne = CalculAllMoyennes(&ValA); // Appel de la fonction en return dans une structure et comme entrée un autre structure qui contient lui aussi une autre structure 
 
 /*************************************************************************************************************************************/
-
-

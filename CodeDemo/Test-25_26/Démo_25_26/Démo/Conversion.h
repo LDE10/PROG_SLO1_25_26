@@ -17,6 +17,40 @@
 #ifndef CONVERSION_H //-> par convertion nomme le nom du fichier
 #define CONVERSION_H
 
+//--Structure globale--//
+typedef struct
+{
+	int gain;
+	double Vbe;
+	short courant[2];
+}str_transistor;
+
+typedef struct
+{
+	char bit1 : 1;	//Utilisation de 1 bit dans 1 octet
+	char bit2 : 2;	//Utilisation de 2 bit dans 1 octet
+	char bits : 5;	//Utilisation de 5 bit dans 1 octet
+	//Attention on ne peut pas le faire avec des réels
+}str_champsbits;
+
+typedef struct
+{
+	char version : 4;			//LSB
+	char longueurEntete : 4;
+	char TypeService;
+	short longueurTotal;		 //MSB
+}str_enteteEthernet;
+
+typedef union
+{
+	str_enteteEthernet decodageTrame;
+	int trame;
+}u_ethernet;
+
+//--Prototype--//
+void DemoStruct(str_transistor transistor);
+
+
 //-- Déclaration définition --//
 
 //-- prototype --//
