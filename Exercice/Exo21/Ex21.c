@@ -14,16 +14,51 @@ int main(void)
 	char rep;
 	FILE *fp1;						// Descripteur de fichier 
 	// Déclaration et initialisation du tableau
+	char *texte = "Exercice 21 Luc Derre";
+	int chiffre1 = 1234;
+	int chiffre2 = 5678;
 
+	int test;
+	char cmpt = 0;
+	int tableau1[10];
 
-	printf ("Ex21 Prenom Nom\n");
+	printf ("Ex21 Luc Derre\n");
 	
 	// 1ère phase 
 	// ----------
+	fp1 = fopen("Ex21_1.txt", "w");
+
+	fprintf(fp1, "%s\n%d\n%d\n\n", texte, chiffre1, chiffre2);
+
+	fclose(fp1);
 
 	// ouverture en lecture binaire du fichier Ex21_1.txt
-	
+	fp1 = fopen("Ex21_1.txt", "rb");
+
 	// Boucle d'affichage en hexa et ASCII du contenu avec fgetc
+
+
+	for(char i = 0; i <= 5; i++)
+	{
+		for (char i = 0; i < 10; i++)
+		{
+			tableau1[i] = getc(fp1);
+			printf("%02x ", tableau1[i]);
+		}
+		for (char i = 0; i <= 10; i++)
+		{
+			tableau1[i] = getc(fp1);
+			printf("%c ", tableau1[i]);
+			if (i == 10)
+			{
+				printf("\n");
+			}
+		}
+	}
+
+	
+
+	fclose(fp1);
 
 	// 2ème phase 
 	// ----------
