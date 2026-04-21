@@ -1,0 +1,4 @@
+﻿  Ex22.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(31,25): warning C4047: '=' : les niveaux d'indirection de 'FILE *' et de 'int' sont différents
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(32,10): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'FILE *'
+  Ex22.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22\x64\Debug\Ex22.exe

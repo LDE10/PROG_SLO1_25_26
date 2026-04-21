@@ -18,12 +18,7 @@ int main(void)
 	int chiffre1 = 1234;
 	int chiffre2 = 5678;
 
-	int test;
-	char cmpt = 0;
 	int tableau1[100];
-	int tableau2[10];
-
-	long offset;
 
 	printf ("Ex21 Luc Derre\n");
 	
@@ -39,30 +34,30 @@ int main(void)
 	fp1 = fopen("Ex21_1.txt", "rb");
 
 	// Boucle d'affichage en hexa et ASCII du contenu avec fgetc
-	for (char i = 0; i < 2; i++)
+	for (char i = 0; i < 3; i++)
 	{
 		for (char i = 0; i < 11; i++)
 		{
 			tableau1[i] = getc(fp1);
 			printf("%02x ", tableau1[i]);
 		}
-		for (char i = 0; i <= 11; i++)
+		for (char i = 0; i < 11; i++)
 		{
-			printf("%c ", tableau1[i]);
+			if (tableau1[i] >= 0x20)
+			{
+				printf("%c ", tableau1[i]);
+			}
+			else
+			{
+				printf("* ");
+			}
+
 			if (i == 10)
 			{
 				printf("\n");
 			}
-			cmpt++;
 		}
-		if (i == 3)
-		{
-
-		}
-		if (tableau1[i] < 0x20)
-		{
-			printf("*");
-		}
+		
 	}
 
 	fclose(fp1);

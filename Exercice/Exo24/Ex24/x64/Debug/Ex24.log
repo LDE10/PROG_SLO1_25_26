@@ -1,0 +1,7 @@
+﻿  Ex24.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24.c(43,18): warning C4474: 'scanf_s' : trop d'arguments passés pour la chaîne de format
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24.c(43,18): message : les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 2 ont été fournis
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24.c(39,8): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24.c(31,10): warning C4101: 'Tableau' : variable locale non référencée
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24.c(30,9): warning C4101: 'Res' : variable locale non référencée
+  Ex24.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo24\Ex24\x64\Debug\Ex24.exe
