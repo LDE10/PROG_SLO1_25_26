@@ -1,4 +1,5 @@
 ﻿  Ex22.c
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(31,25): warning C4047: '=' : les niveaux d'indirection de 'FILE *' et de 'int' sont différents
-C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(32,10): warning C4477: 'printf' : la chaîne de format '%f' nécessite un argument de type 'double', mais l'argument variadique 1 est de type 'FILE *'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(40,14): warning C4244: 'fonction' : conversion de 'double' en 'long', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(45,14): warning C4244: 'fonction' : conversion de 'double' en 'long', perte possible de données
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22.c(50,14): warning C4244: 'fonction' : conversion de 'double' en 'long', perte possible de données
   Ex22.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo22\Ex22\x64\Debug\Ex22.exe

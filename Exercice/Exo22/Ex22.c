@@ -12,7 +12,10 @@ int main(void)
 {
 	FILE *fp1;	// descripteur de fichier 
 	char *FileName1 = "Ex22_Alire.bin"; 
-	char rep = 7;
+	char rep;
+	double Val1;
+	int Val2;
+	double offset;
 
 	// a Adapter
 	printf ("Ex22 Derre Luc \n");
@@ -28,14 +31,34 @@ int main(void)
 		printf ("Lecture du fichier %s \n", FileName1);
 
 		// Introduisez ICI le traitement des éléments [7], [51] et [77]:
-		fp1 = fseek(fp1, 7, 0);
-		printf("%f", fp1);
+
+		/*
+		fseek(fp1, offset, SEEK_SET);
+		fread(&Val1, sizeof(long), 7, fp1);*/
+
+		offset = 7 * sizeof(double);
+		fseek(fp1, offset, 0);
+		fread(&Val1, sizeof(long), 7, fp1);
+		printf("Val element [07] = %.2f\n", Val1);
+
+		offset = 51 * sizeof(double);
+		fseek(fp1, offset, 0);
+		fread(&Val1, sizeof(long), 51, fp1);
+		printf("Val element [51] = %.2f\n", Val1);
 		
+		offset = 77 * sizeof(double);
+		fseek(fp1, offset, 0);
+		fread(&Val1, sizeof(long), 77, fp1);
+		printf("Val element [77] = %.2f\n", Val1);
+
 		// Introduisez ICI la détermination de la longueur du fichier
+		//offset = 100 * sizeof(double);
+		fseek(fp1, 0, 2);
+		Val2 = ftell(fp1);
+		printf("Longueur du fichier Ex22_Alir.bin = %d\n", Val2);
 
-
-		fclose (fp1); // fermeture du fichier
 	}
+	fclose(fp1); // fermeture du fichier
 
 	// Pour observation
 	printf("Enter pour terminer \n");
