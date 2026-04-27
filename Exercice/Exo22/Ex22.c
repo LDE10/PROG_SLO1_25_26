@@ -32,10 +32,6 @@ int main(void)
 
 		// Introduisez ICI le traitement des éléments [7], [51] et [77]:
 
-		/*
-		fseek(fp1, offset, SEEK_SET);
-		fread(&Val1, sizeof(long), 7, fp1);*/
-
 		offset = 7 * sizeof(double);
 		fseek(fp1, offset, 0);
 		fread(&Val1, sizeof(long), 7, fp1);

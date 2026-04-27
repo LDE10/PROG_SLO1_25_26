@@ -7,8 +7,6 @@
 
 #include <stdio.h>	// pour fopen, fprintf, fclose, fwrite, fgetc
 
-
-
 int main(void)
 {
 	char rep;

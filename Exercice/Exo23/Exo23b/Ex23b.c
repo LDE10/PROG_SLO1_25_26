@@ -14,10 +14,10 @@ int main(void)
 
 	char UserAnswer;
 	int status;
-		
+	
 
 	// A adapter
-	printf ("Exercice 23b Prenom NOM \n");
+	printf ("Exercice 23b Luc Derre \n");
 	
 	do {
 		printf("Test A , B ou C, Q pour Quitter \n");

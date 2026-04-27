@@ -1,0 +1,10 @@
+﻿  ShowUtil.c
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(37,48): warning C4133: 'fonction' : types incompatibles - de 'char *' à 'FILE *'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(40,24): warning C4047: 'fonction' : les niveaux d'indirection de 'FILE *' et de 'int' sont différents
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(40,19): warning C4024: 'feof' : types différents pour le paramètre formel et réel 1
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(42,18): warning C4133: 'fonction' : types incompatibles - de 'char *' à 'FILE *'
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(10,2): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(49): warning C4716: 'ShowInt16' : doit retourner une valeur
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(54): warning C4716: 'ShowFloat' : doit retourner une valeur
+C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\ShowUtil.c(43): warning C4700: variable locale 'status' non initialisée utilisée
+  Ex23.vcxproj -> C:\LDE Github\PROG_SLO1_25_26\Exercice\Exo23\Exo23b\Ex23\x64\Debug\Ex23.exe
