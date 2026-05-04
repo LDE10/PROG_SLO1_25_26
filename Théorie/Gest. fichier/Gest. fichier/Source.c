@@ -19,25 +19,44 @@ fp1 = fopen("test1.txt", w);
 // Plusieur solution pour écrire ou lire les dossiers
 fprintf() fscanf() / fputs() fgets() / fputc() fgetc() / fwrite() fread()
 
- /* 
+/*
 fprintf() va écrire uniquement dans un fichier texte
-fwrite() va écrire du texte MAIS plus utile pour du binaire 
-fputs() va écrire une chaine de caractère
-fputc() va écrire UN caractère 
+fwrite() va écrire du texte MAIS plus utile pour du binaire
+fputs() va écrire une chaine de caractère dans un fichier
+fputc() permet d'écrire dans un fichier en text ou en binaire
 */
+
+//Exemple :
+fprintf(fp1, "ETML\n");
+fwirte(Pointeur, sizeof(long), Nbr élement, fp1);
+fputs(chaine1, fp1);  //chaine1 = "ETML";
+fputc(variableTXT, fp1);
 
 /*
 fscanf() va lire du texte
-fread() va lire du binaire
-fgets() va lire du text
-fgetc() va lire du texte et du binaire
+fread() permet de lire un bloc de donnée spécifique
+fgets() permet de lire une chaine de caractère dans un fichier ouvert.
+fgetc() permet de lire UN caractère dans un fichier en lecture bianire ou texte
 */
+
+//Exemple :
+fscanf(fp1, "%s", chaine1);
+tableau = fread(Pointeur, sizeof(long), Nbr élement, fp1);
+fgets(tableau, NbrMaxCaractère, fp1);
+texte = fgetc(fp1);
 
 // Pour se situer dans un fichier
 fseek() / ftell() / rewind()
 
 /*
-fseek() 
-ftell() se situe avec le nombre d'octet déplacé
-rewind() même chose que le fseek() MAIS si il ne trouve pas il envoie un message d'erreur
+fseek() permet de placer le pointeur de position sur un octet
+ftell() connaitre la position relative à partir du début
+rewind() se positionne automatiquement au début
 */
+
+//Exemple :
+fseek(fp1, offset, SEEK_SET);		//SEEK_SET = Depuis le début; SEEK_CUR = depuis la position actuelle; SEEK_END = Depuis la fin ATTENTION offset doit être à 0 ou négatif pour reculer
+variable = ftell(fp1);
+frewind(fp1);
+
+fclose(fp1); //Si fini avec le fichier pour fermer le fichier
